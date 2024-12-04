@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="https://prd-cdn-talkdesk.talkdesk.com/cdn-assets/4.0.0/talkdesk/brand/main_brand/favicon/favicon-16x16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="https://prd-cdn-talkdesk.talkdesk.com/cdn-assets/4.0.0/talkdesk/brand/main_brand/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="https://prd-cdn-talkdesk.talkdesk.com/cdn-assets/4.0.0/talkdesk/brand/main_brand/favicon/favicon-96x96.png"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <link rel="preload" href="./assets/Inter-SemiBold-XVCL1Lno.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
+<link rel="preload" href="./assets/Inter-Regular-DYjygwQm.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
+    <style>
+      html,
+      body,
+      #root {
+        height: 100%;
+        margin: 0;
+      }
+
+      .tdw-widget-content {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        box-sizing: border-box;
+        padding: 56px 16px 16px;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .tdw-loader {
+        position: relative;
+        width: 100px;
+        height: 10px;
+      }
+
+      .tdw-loader::before , .tdw-loader::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 10px;
+        height: 10px;
+        margin-left: 25%;
+        border-radius: 50%;
+        box-shadow: 20px 0 #e9e9e9;
+        background: #e9e9e9;
+        animation: move-x 1s linear infinite;
+      }
+
+      .tdw-loader::after {
+        box-shadow: none;
+        transform: translateX(40px) scale(1);
+        z-index: 2;
+        animation: loading 1s linear infinite;
+      }
+
+      @keyframes loading {
+        0% , 5%{
+          transform: translateX(40px) scale(1);
+          background: #e9e9e9;
+        }
+        10%{
+          transform: translateX(40px) scale(1);
+          background: var(--chat-theme-color, #1f1f1f);
+        }
+        40%{
+          transform: translateX(20px) scale(1.5);
+          background: var(--chat-theme-color, #1f1f1f);
+        }
+        90%, 95% {
+          transform: translateX(0px) scale(1);
+          background: var(--chat-theme-color, #1f1f1f);
+        }
+        100% {
+          transform: translateX(0px) scale(1);
+          background: #e9e9e9;
+        }
+      }
+
+      @keyframes move-x {
+        0% , 10%{  transform: translateX(0) }
+        90%, 100% { transform: translateX(20px) }
+      }
+    </style>
+    <title>Chat Widget Window</title>
+    <script type="module" crossorigin src="./assets/index-DEWDJeYe.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/main-vendor-DXirhFg8.js">
+    <link rel="modulepreload" crossorigin href="./assets/reporter-vendor-CC1waedv.js">
+    <link rel="modulepreload" crossorigin href="./assets/overlayscrollbars-xOREQhpB.js">
+    <link rel="modulepreload" crossorigin href="./assets/Arrow-6NOPDRoB.js">
+    <link rel="stylesheet" crossorigin href="./assets/overlayscrollbars-BRYp-MvP.css">
+    <link rel="stylesheet" crossorigin href="./assets/index-Cs7SHzC9.css">
+    <script type="module">import.meta.url;import("_").catch(()=>1);(async function*(){})().next();if(location.protocol!="file:"){window.__vite_is_modern_browser=true}</script>
+    <script type="module">!function(){if(window.__vite_is_modern_browser)return;console.warn("vite: loading legacy chunks, syntax error above and the same error below should be ignored");var e=document.getElementById("vite-legacy-polyfill"),n=document.createElement("script");n.src=e.src,n.onload=function(){System.import(document.getElementById('vite-legacy-entry').getAttribute('data-src'))},document.body.appendChild(n)}();</script>
+  </head>
+
+  <body>
+    <div id="root">
+      <div class="tdw-widget-content">
+        <span class="tdw-loader"></span>
+      </div>
+    </div>
+    <script nomodule>!function(){var e=document,t=e.createElement("script");if(!("noModule"in t)&&"onbeforeload"in t){var n=!1;e.addEventListener("beforeload",(function(e){if(e.target===t)n=!0;else if(!e.target.hasAttribute("nomodule")||!n)return;e.preventDefault()}),!0),t.type="module",t.src=".",e.head.appendChild(t),t.remove()}}();</script>
+    <script nomodule crossorigin id="vite-legacy-polyfill" src="./assets/polyfills-legacy-D3gEZioK.js"></script>
+    <script nomodule crossorigin id="vite-legacy-entry" data-src="./assets/index-legacy-CAWJ27Iu.js">System.import(document.getElementById('vite-legacy-entry').getAttribute('data-src'))</script>
+  </body>
+</html>
