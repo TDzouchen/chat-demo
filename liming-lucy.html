@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delta</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    html, body, .bg {
+      width: 100%;
+      height: 100%;
+    }
+    .bg {
+      background: url('./bg.png') no-repeat center center;
+      background-size: cover;
+    }
+  </style>
+</head>
+<body>
+  <div class="bg"></div>
+  <!-- Start of Talkdesk Code -->
+    <script>
+      var webchat;
+      (function(window, document, node, props, configs) {
+        if (window.TalkdeskChatSDK) {
+          console.error("TalkdeskChatSDK already included");
+          return;
+        }
+        var divContainer = document.createElement("div");
+        divContainer.id = node;
+        document.body.appendChild(divContainer);
+        var src = "./v2/talkdeskchatsdk.js";
+        var script = document.createElement("script");
+        var firstScriptTag = document.getElementsByTagName("script")[0];
+        script.type = "text/javascript";
+        script.charset = "UTF-8";
+        script.id = "tdwebchatscript";
+        script.src = src;
+        script.async = true;
+        firstScriptTag.parentNode.insertBefore(script, firstScriptTag);
+        script.onload = function() {
+          webchat = TalkdeskChatSDK(node, props);
+          webchat.init(configs);
+          /*
+           * Send custom data from your website to TalkDesk!
+           * If you would like to do it, you need to remove the following commented code and
+           * modify the webchat.setContextParam parameters to pass in the data you need.
+           */
+           function setContext() {
+             webchat.setContextParam({ "field_name1": "Lucy" })
+           }
+           // Send data when the chat conversation is initiated
+           webchat.onConversationStart = function() {
+             setContext()
+           }
+           // Send data when the chat widget is open
+           webchat.onOpenWebchat = function() {
+             setContext()
+           }
+        };
+      })(
+        window,
+        document,
+        "tdWebchat",
+        { touchpointId: "e12b14ecebd844e5824337da6d64378f", accountId: "", region: "td-us-1" },
+        { enableValidation: false, enableEmoji: true, enableUserInput: true, enableAttachments: true }
+      );
+    </script>
+<!-- End of Talkdesk Code -->
+</body>
+</html>
